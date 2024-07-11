@@ -9,7 +9,10 @@ body {
 }
 
 .idx-nav {
-  background-color: #181818;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
 
 .idx-nav ul {
@@ -61,8 +64,18 @@ body {
   }
 }
 
+.idx-banner img {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(50%);
+}
+
 .idx-content {
-  margin: 0;
+  min-height: calc(100vh - 420px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,11 +135,12 @@ h4 {
 
 /* footer */
 .g-footer {
+  margin-top: auto;
   background-image: linear-gradient(to right, #21252b, #212428);
   color: #fff;
   padding: 20px;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
 

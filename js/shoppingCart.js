@@ -1,5 +1,3 @@
-// copia por valor vs copia por referencia
-
 const productList = [
   { id: 1, name: "EMS-VSC3", price: 6000, stock: 2 },
   { id: 2, name: "ARP2600", price: 1400, stock: 1 },

@@ -12,7 +12,7 @@ const productList = [
 
 function shoppingCart() {
   let productId = prompt(
-    "Please, enter the ID of the product you want to parchase:"
+    "Please, enter the ID of the product you want to purchase:\n\nID: 1 — EMS-VCS3\nID: 2 — ARP2600\nID: 3 — SH101\nID: 4 — Moog Subsequent 37\nID: 5 — Moog Grandmother\nID: 6 — Intellijel Cascadia\nID: 7 — Analogue Solutions Telemark"
   );
   productId = parseInt(productId);
 

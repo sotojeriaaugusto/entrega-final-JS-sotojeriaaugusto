@@ -9,16 +9,33 @@ body {
 }
 
 .idx-nav {
-  list-style-type: none;
-  text-decoration: none;
   background-color: #181818;
-  margin: 0;
-  text-align: center;
-  padding: 15px 0;
 }
 
-.idx-nav li {
-  display: inline;
+.idx-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.idx-nav .title-logo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.idx-nav .title-logo img {
+  max-width: 80px;
+  height: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: translate(0, -16%);
+  }
 }
 
 .idx-nav a {
@@ -26,10 +43,22 @@ body {
   text-transform: uppercase;
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
-  color: rgb(39, 104, 216);
+  color: rgb(39, 160, 216);
   font-weight: bold;
+  display: block;
   text-align: center;
-  padding: 10px;
+  padding: 35px;
+}
+
+.idx-nav .icon {
+  margin-right: 35px;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.5s ease;
+  &:hover {
+    color: rgb(39, 160, 216);
+    transform: translate(0, -16%);
+  }
 }
 
 .idx-content {

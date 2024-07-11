@@ -4,6 +4,109 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #1e1e1e;
+}
+
+.idx-nav {
+  list-style-type: none;
+  text-decoration: none;
+  background-color: #181818;
+  margin: 0;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.idx-nav li {
+  display: inline;
+}
+
+.idx-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  color: #fcfcfc;
+  text-align: center;
+  padding: 10px;
+}
+
 .idx-content {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  background-color: #181818;
+  color: white;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 32px;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: translate(0, -16%);
+  }
+}
+
+/* footer */
+.g-footer {
+  background-image: linear-gradient(to right, #495461, #212428);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p {
+    color: rgba(232, 230, 227, 0.7);
+    font-family: Arial, Helvetica, sans-serif;
+
+    a {
+      color: rgb(39, 104, 216);
+      text-decoration: none;
+    }
+  }
+
+  .favicons {
+    margin-bottom: 30px;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: -5px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 28px;
+
+        .fa-stack {
+          font-size: 18px;
+          transition: transform 0.5s ease;
+
+          &:hover {
+            transform: translate(0, -16%);
+          }
+        }
+      }
+    }
+  }
 }

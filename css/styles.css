@@ -64,6 +64,17 @@ body {
   }
 }
 
+.idx-nav .menu-btn {
+  margin-left: 35px;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.5s ease;
+  &:hover {
+    color: rgb(39, 160, 216);
+    transform: translate(0, -16%);
+  }
+}
+
 .idx-banner img {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -80,7 +91,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: -15px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -103,6 +114,7 @@ button {
   display: inline-block;
   font-size: 16px;
   padding: 15px 32px;
+  border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: transform 0.5s ease;
@@ -117,7 +129,7 @@ button {
 h4 {
   font-size: 18px;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.71);
   text-transform: uppercase;
   font-family: "Courier New", Courier, monospace;
   margin-top: 20px;
@@ -128,7 +140,7 @@ h4 {
 
 .id-list {
   text-align: start;
-  color: white;
+  color: rgba(255, 255, 255, 0.989);
   text-transform: uppercase;
   font-family: monospace;
   background-color: #181818;
@@ -136,6 +148,36 @@ h4 {
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.id-list-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.id-list-item .text {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.id-list-item .addToCart {
+  background-color: #181818;
+  color: white;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  padding: 4px 25px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: transform 0.5s ease;
+}
+
+.id-list-item .addToCart:hover {
+  transform: translate(0, -5%);
+  color: rgb(86, 146, 248);
+  font-weight: bold;
 }
 
 /* footer */

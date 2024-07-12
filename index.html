@@ -14,6 +14,7 @@
   <body>
     <nav class="idx-nav">
       <ul>
+        <li class="menu-btn"><i class="fa-solid fa-bars"></i></li>
         <li class="title-logo"><img src="./media/img/AS-Logo.png" alt="" /></li>
         <li class="icon" onclick="shoppingCart()">
           <i class="fa-solid fa-cart-shopping"></i>
@@ -28,14 +29,42 @@
     </div>
 
     <main class="idx-content">
-      <h3>Para arrancar el prompt haz click en el botón de ejemplo</h3>
+      <h3>Para arrancar el prompt haz click en el siguiente botón</h3>
       <button id="example-btn" onclick="shoppingCart()">SHOPPING CART</button>
-      <h4>Listado de productos por ID</h4>
-      <p class="id-list">
-        ID - 1 > EMS VCS3<br />ID - 2 > ARP2600 <br />ID - 3 > SH101<br />ID - 4
-        > Moog Subsequent 37<br />ID - 5 > Moog Grandmother<br />ID - 6 >
-        Intellijel Cascadia<br />ID - 7 > Analogue Solutions Telemark<br />
-      </p>
+      <h4>
+        Listado de productos por ID <br />(Botón de agregar al carrito no
+        disponible) <br />usar el botón de arriba para ejecutar el prompt
+      </h4>
+      <div class="id-list">
+        <div class="id-list-item">
+          <span class="text">ID - 1 > EMS VCS3</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 2 > ARP2600</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 3 > SH101</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 4 > Moog Subsequent 37</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 5 > Moog Grandmother</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 6 > Intellijel Cascadia</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+        <div class="id-list-item">
+          <span class="text">ID - 7 > Analogue Solutions Telemark</span>
+          <button class="addToCart">Agregar al carrito</button>
+        </div>
+      </div>
     </main>
 
     <!-- global footer imp -->

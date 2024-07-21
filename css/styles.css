@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #1e1e1e;
+  background-image: linear-gradient(to right, #212428, #1b1d1f);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -112,7 +112,8 @@ h3 {
 }
 
 button {
-  background-color: #181818;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   color: white;
   border: none;
   text-align: center;
@@ -148,7 +149,8 @@ h4 {
   color: rgba(255, 255, 255, 0.989);
   text-transform: uppercase;
   font-family: monospace;
-  background-color: #181818;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -172,7 +174,8 @@ h4 {
 }
 
 .id-list-item .addToCart {
-  background-color: #181818;
+  background: rgba(255, 255, 255, 0.338);
+  backdrop-filter: blur(15px);
   color: white;
   border: none;
   text-align: center;
@@ -242,6 +245,7 @@ h4 {
   }
 }
 
+/* cube */
 .scene {
   width: 200px;
   height: 200px;
@@ -258,11 +262,11 @@ h4 {
 
 .face {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 180px;
   background: rgba(255, 255, 255, 0);
-  border: 1px solid rgb(39, 90, 143);
-  box-shadow: 0 0 20px rgba(86, 158, 216, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,5 +313,59 @@ h4 {
   }
   to {
     transform: rotateY(360deg);
+  }
+}
+
+/* slider */
+.slider {
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+}
+.slider .list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+}
+.slider .list .item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  animation: autoRun 10s linear infinite;
+  transition: filter 0.5s;
+  animation-delay: calc(
+    (10s / var(--quantity)) * (var(--position) - 1)
+  ) !important;
+}
+.slider .list .item img {
+  width: 100%;
+}
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+.slider:hover .item {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+.slider .item:hover {
+  filter: grayscale(0);
+}
+.slider[reverse="true"] .item {
+  animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
   }
 }

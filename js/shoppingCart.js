@@ -17,9 +17,7 @@ function shoppingCart() {
   const product = productList.find((item) => item.id === productId);
 
   if (!product) {
-    alert(
-      "Oops! Invalid ID :( please enter a valid ID of an existing product."
-    );
+    alert("Oops! Invalid ID. Please enter a valid ID of an existing product.");
     return;
   }
 

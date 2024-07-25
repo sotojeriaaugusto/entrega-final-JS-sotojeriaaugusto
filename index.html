@@ -12,111 +12,31 @@
     <title>[JS] Pre-entrega 2</title>
   </head>
   <body>
-    <nav class="idx-nav">
-      <ul>
-        <li class="menu-btn"><i class="fa-solid fa-bars"></i></li>
-        <li class="title-logo">
-          <div class="scene">
-            <div class="cube">
-              <div class="face front">
-                <img
-                  class="logo-main"
-                  src="./media/img/Stone-Island-Logo.png"
-                  alt="Stone Island Logo frontside"
-                />
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="icon" onclick="shoppingCart()">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </li>
+    <nav class="navbar">
+      <img class="logo" src="./media/img/stone-island_logo.png" />
+      <div class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">STORE</a></li>
       </ul>
     </nav>
     <div class="idx-banner">
-      <img src="./media/img/bg.png" alt="Stone Island Reynisfjara Banner" />
+      <img
+        src="./media/img/header-bg.png"
+        alt="Stone Island Reynisfjara Banner"
+      />
     </div>
 
     <main class="idx-content">
       <h3>Para arrancar el prompt haz click en el siguiente botón</h3>
       <button id="example-btn" onclick="shoppingCart()">SHOPPING CART</button>
-      <div
-        class="slider"
-        style="--width: 100px; --height: 50px; --quantity: 10"
-      >
-        <div class="list">
-          <div class="item" style="--position: 1">
-            <img src="images/slider1_1.png" alt="" />
-          </div>
-          <div class="item" style="--position: 2">
-            <img src="images/slider1_2.png" alt="" />
-          </div>
-          <div class="item" style="--position: 3">
-            <img src="images/slider1_3.png" alt="" />
-          </div>
-          <div class="item" style="--position: 4">
-            <img src="images/slider1_4.png" alt="" />
-          </div>
-          <div class="item" style="--position: 5">
-            <img src="images/slider1_5.png" alt="" />
-          </div>
-          <div class="item" style="--position: 6">
-            <img src="images/slider1_6.png" alt="" />
-          </div>
-          <div class="item" style="--position: 7">
-            <img src="images/slider1_7.png" alt="" />
-          </div>
-          <div class="item" style="--position: 8">
-            <img src="images/slider1_8.png" alt="" />
-          </div>
-          <div class="item" style="--position: 9">
-            <img src="images/slider1_9.png" alt="" />
-          </div>
-          <div class="item" style="--position: 10">
-            <img src="images/slider1_10.png" alt="" />
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="slider"
-        reverse="true"
-        style="--width: 200px; --height: 200px; --quantity: 9"
-      >
-        <div class="list">
-          <div class="item" style="--position: 1">
-            <img src="./media/img/01.png" alt="" />
-          </div>
-          <div class="item" style="--position: 2">
-            <img src="./media/img/02.png" alt="" />
-          </div>
-          <div class="item" style="--position: 3">
-            <img src="./media/img/03.png" alt="" />
-          </div>
-          <div class="item" style="--position: 4">
-            <img src="./media/img/04.png" alt="" />
-          </div>
-          <div class="item" style="--position: 5">
-            <img src="./media/img/05.png" alt="" />
-          </div>
-          <div class="item" style="--position: 6">
-            <img src="./media/img/06.png" alt="" />
-          </div>
-          <div class="item" style="--position: 7">
-            <img src="./media/img/07.png" alt="" />
-          </div>
-          <div class="item" style="--position: 8">
-            <img src="./media/img/09.png" alt="" />
-          </div>
-          <div class="item" style="--position: 9">
-            <img src="./media/img/10.png" alt="" />
-          </div>
-        </div>
-      </div>
     </main>
 
     <!-- global footer imp -->
     <footer class="g-footer">
+      <p class="follow-us">FOLLOW US ON</p>
       <ul class="favicons">
         <li>
           <a href="https://github.com/sotojeriaaugusto" target="_blank">
@@ -125,29 +45,32 @@
                 class="fas fa-circle fa-stack-2x"
                 style="color: rgb(24, 26, 27)"
               ></i>
-              <i class="fab fa-github fa-stack-1x"></i>
+              <i class="fab fa-instagram fa-stack-1x"></i>
             </span>
           </a>
         </li>
         <li>
-          <a href="https://linkedin.com/" target="_blank">
+          <a
+            href="https://www.youtube.com/user/StoneIslandOfficial"
+            target="_blank"
+          >
             <span class="fa-stack fa-2x">
               <i
                 class="fas fa-circle fa-stack-2x"
                 style="color: rgb(24, 26, 27)"
               ></i>
-              <i class="fab fa-linkedin fa-stack-1x"></i>
+              <i class="fab fa-youtube fa-stack-1x"></i>
             </span>
           </a>
         </li>
         <li>
-          <a href="" target="_blank">
+          <a href="https://x.com/stoneisland" target="_blank">
             <span class="fa-stack fa-2x">
               <i
                 class="fas fa-circle fa-stack-2x"
                 style="color: rgb(24, 26, 27)"
               ></i>
-              <i class="fa-sharp fa-solid fa-envelope fa-stack-1x"></i>
+              <i class="fab fa-twitter fa-stack-1x"></i>
             </span>
           </a>
         </li>

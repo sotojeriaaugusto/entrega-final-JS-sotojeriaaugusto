@@ -60,8 +60,15 @@ productList.forEach((product) => {
     <img src="${product.image}" alt="${product.name}" class="product-img">
     <div class="product-info">
       <h3>${product.name}</h3>
-      <p>Price: $${product.price}</p>
+      <p>$${product.price}</p>
       <p>Stock: ${product.stock}</p>
+      <div class="quantity-controls">
+        <button class="decrement-quantity" data-id="${product.id}">-</button>
+        <input type="number" value="1" min="1" max="${
+          product.stock
+        }" class="quantity-input" data-id="${product.id}">
+        <button class="increment-quantity" data-id="${product.id}">+</button>
+      </div>
       <button class="add-to-cart-btn" ${
         product.stock === 0 ? "disabled" : ""
       } data-id="${product.id}">Add to Cart</button>
@@ -71,28 +78,58 @@ productList.forEach((product) => {
   productListContainer.appendChild(productCard);
 });
 
+document.querySelectorAll(".increment-quantity").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const productId = parseInt(event.target.dataset.id);
+    const input = document.querySelector(
+      `.quantity-input[data-id="${productId}"]`
+    );
+    let quantity = parseInt(input.value);
+    if (quantity < productList.find((p) => p.id === productId).stock) {
+      input.value = quantity + 1;
+    }
+  });
+});
+
+document.querySelectorAll(".decrement-quantity").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const productId = parseInt(event.target.dataset.id);
+    const input = document.querySelector(
+      `.quantity-input[data-id="${productId}"]`
+    );
+    let quantity = parseInt(input.value);
+    if (quantity > 1) {
+      input.value = quantity - 1;
+    }
+  });
+});
+
 document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
   button.addEventListener("click", (event) => {
     const productId = parseInt(event.target.dataset.id);
     const product = productList.find((p) => p.id === productId);
+    const input = document.querySelector(
+      `.quantity-input[data-id="${productId}"]`
+    );
+    const quantity = parseInt(input.value);
 
-    if (product && product.stock > 0) {
-      let quantity = parseInt(
-        prompt(`Enter the amount of "${product.name}" you want to purchase:`)
-      );
-      if (isNaN(quantity) || quantity <= 0 || quantity > product.stock) {
-        alert(
-          `Invalid amount. Please enter an amount between 1 and ${product.stock}.`
-        );
-        return;
-      }
-
-      let total = product.price * quantity;
-      alert(
-        `Total a pagar por ${quantity} unidades de ${product.name}: $${total}`
-      );
+    if (product && quantity > 0 && quantity <= product.stock) {
+      Swal.fire({
+        title: "Done!",
+        text: `You added ${quantity} units of ${product.name} to your shopping cart.`,
+        icon: "success",
+        confirmButtonText: "OK",
+        customClass: {
+          popup: "notification",
+        },
+      });
     } else {
-      alert("Sorry, this product is out of stock.");
+      Swal.fire({
+        title: "Oops!",
+        text: "The quantity exceeds the available stock.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   });
 });

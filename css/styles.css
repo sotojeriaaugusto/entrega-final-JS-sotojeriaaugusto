@@ -42,6 +42,21 @@ body {
   }
 }
 
+a {
+  color: white;
+}
+
+.profile {
+  grid-column: 4 / 4;
+  padding: 0 40px;
+  padding-left: 0px;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: translate(0, -16%);
+  }
+}
+
 .navbar-links {
   grid-column: 1 / -1;
   display: flex;
@@ -138,10 +153,8 @@ button {
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  transition: transform 0.5s ease;
 
   &:hover {
-    transform: translate(0, -16%);
     color: rgb(255, 255, 255);
     font-weight: bold;
   }
@@ -281,7 +294,7 @@ button {
 
 .add-to-cart-btn {
   font-family: monospace;
-  background-image: linear-gradient(to right, #21252b, #212428);
+  background-image: linear-gradient(to right, #1a1d23, #191b1f);
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-size: 14px;
@@ -299,4 +312,75 @@ button {
 .add-to-cart-btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-decrease,
+.quantity-increase {
+  background-color: #444;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  margin: 0 5px;
+  outline: none;
+  background-color: #11101000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.quantity-input:disabled {
+  background-color: #f0f0f0;
+}
+
+.quantity-decrease:disabled,
+.quantity-increase:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantity-controls {
+  max-width: auto;
+}
+
+/* form number input arrow del */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* end */
+
+.notification {
+  background-color: #21252b !important;
+  font-family: monospace;
+}
+
+.swal2-title {
+  color: #fff;
+}
+.swal2-content {
+  color: #fff;
+}
+
+.swal2-styled.swal2-confirm {
+  background-image: linear-gradient(to right, #21252b, #212428) !important;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: translate(0, -16%);
+  }
 }

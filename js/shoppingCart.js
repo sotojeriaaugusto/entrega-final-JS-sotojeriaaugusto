@@ -1,63 +1,98 @@
 const productList = [
-  { id: 1, name: "EMS-VSC3", price: 6000, stock: 2 },
-  { id: 2, name: "ARP2600", price: 1400, stock: 1 },
-  { id: 3, name: "SH101", price: 1000, stock: 4 },
-  { id: 4, name: "Moog Subsequent 37", price: 1200, stock: 7 },
-  { id: 5, name: "Moog Grandmother", price: 1400, stock: 3 },
-  { id: 6, name: "Intellijel Cascadia", price: 2000, stock: 1 },
-  { id: 7, name: "Analogue Solutions Telemark", price: 1600, stock: 0 },
+  {
+    id: 1,
+    name: "EMS-VSC3",
+    price: 6000,
+    stock: 2,
+    image: "../media/img/01.png",
+  },
+  {
+    id: 2,
+    name: "ARP2600",
+    price: 1400,
+    stock: 1,
+    image: "../media/img/02.png",
+  },
+  {
+    id: 3,
+    name: "SH101",
+    price: 1000,
+    stock: 4,
+    image: "../media/img/03.png",
+  },
+  {
+    id: 4,
+    name: "Moog Subsequent 37",
+    price: 1200,
+    stock: 7,
+    image: "../media/img/04.png",
+  },
+  {
+    id: 5,
+    name: "Moog Grandmother",
+    price: 1400,
+    stock: 3,
+    image: "../media/img/05.png",
+  },
+  {
+    id: 6,
+    name: "Intellijel Cascadia",
+    price: 2000,
+    stock: 1,
+    image: "../media/img/06.png",
+  },
+  {
+    id: 7,
+    name: "Analogue Solutions Telemark",
+    price: 1600,
+    stock: 0,
+    image: "../media/img/07.png",
+  },
 ];
 
-function shoppingCart() {
-  let productId = prompt(
-    "Please, enter the ID of the product you want to purchase:\n\nID: 1 — EMS-VCS3\nID: 2 — ARP2600\nID: 3 — SH101\nID: 4 — Moog Subsequent 37\nID: 5 — Moog Grandmother\nID: 6 — Intellijel Cascadia\nID: 7 — Analogue Solutions Telemark"
-  );
-  productId = parseInt(productId);
+const productListContainer = document.querySelector(".available-products");
 
-  const product = productList.find((item) => item.id === productId);
+productList.forEach((product) => {
+  const productCard = document.createElement("div");
+  productCard.classList.add("product-card");
 
-  if (!product) {
-    alert("Oops! Invalid ID. Please enter a valid ID of an existing product.");
-    return;
-  }
+  productCard.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" class="product-img">
+    <div class="product-info">
+      <h3>${product.name}</h3>
+      <p>Price: $${product.price}</p>
+      <p>Stock: ${product.stock}</p>
+      <button class="add-to-cart-btn" ${
+        product.stock === 0 ? "disabled" : ""
+      } data-id="${product.id}">Add to Cart</button>
+    </div>
+  `;
 
-  let quantity = prompt(
-    `Enter the amount of "${product.name}" you want to purchase:`
-  );
-  quantity = parseInt(quantity);
+  productListContainer.appendChild(productCard);
+});
 
-  if (isNaN(quantity) || quantity <= 0 || quantity > product.stock) {
-    alert(
-      `Invalid amount. Please enter an amount between 1 and the amount of stock avaiable that is: ${product.stock}.`
-    );
-    return;
-  }
+document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const productId = parseInt(event.target.dataset.id);
+    const product = productList.find((p) => p.id === productId);
 
-  let total = product.price * quantity;
-  let applyDiscount = confirm(
-    "Do you have any discount code? Answer:\n\n1 - YES\n2 - NO"
-  );
-
-  if (applyDiscount) {
-    let discountCode = prompt("Enter discount code:");
-
-    const validDiscountCode = "PR3ENTR3G4";
-
-    while (discountCode !== validDiscountCode && discountCode !== "0") {
-      discountCode = prompt(
-        "Invalid discount code. Try again (or type 0 to cancel this action):"
+    if (product && product.stock > 0) {
+      let quantity = parseInt(
+        prompt(`Enter the amount of "${product.name}" you want to purchase:`)
       );
-    }
+      if (isNaN(quantity) || quantity <= 0 || quantity > product.stock) {
+        alert(
+          `Invalid amount. Please enter an amount between 1 and ${product.stock}.`
+        );
+        return;
+      }
 
-    if (discountCode === "0") {
-      alert("Discount cancelled. Here's the sumary of your purchase ");
-    } else {
-      total *= 0.25;
+      let total = product.price * quantity;
       alert(
-        `Discount code applied. Now with your discount you gotta pay: $${total}`
+        `Total a pagar por ${quantity} unidades de ${product.name}: $${total}`
       );
+    } else {
+      alert("Sorry, this product is out of stock.");
     }
-  } else {
-    alert(`Total a pagar: $${total}`);
-  }
-}
+  });
+});

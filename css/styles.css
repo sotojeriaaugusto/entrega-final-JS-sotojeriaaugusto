@@ -171,10 +171,26 @@ button {
 
   .follow-us {
     color: white;
-    font-family: monospace;
     margin-bottom: 15px;
     font-family: "pf_dintext_proregular", Helvetica, Arial, sans-serif;
     font-size: 13px;
+  }
+
+  .copyright {
+    color: white;
+    font-family: monospace;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #ffffff9a;
+  }
+
+  .copyright a {
+    text-decoration: none;
+    color: white;
+  }
+  .copyright a:visited {
+    text-decoration: none;
   }
   .favicons {
     margin-bottom: 30px;
@@ -201,4 +217,86 @@ button {
       }
     }
   }
+}
+
+/* products */
+.available-products {
+  display: grid;
+  gap: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #4a586d71;
+  padding: 10px;
+  max-width: 1200px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #21252b81;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: translate(0, -2.2%);
+  }
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  background-color: #1b283927;
+}
+
+.product-info {
+  padding: 10px;
+  background-color: #21252bc6;
+  border-radius: 0 0 8px 8px;
+}
+
+.product-info h3 {
+  margin: 5px 0;
+  font-size: 16px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  font-family: monospace;
+}
+
+.product-info p {
+  margin: 5px 0;
+  color: white;
+  font-family: monospace;
+}
+
+.add-to-cart-btn {
+  font-family: monospace;
+  background-image: linear-gradient(to right, #21252b, #212428);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  border-radius: 4px;
+}
+
+button {
+  margin-bottom: 8px;
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

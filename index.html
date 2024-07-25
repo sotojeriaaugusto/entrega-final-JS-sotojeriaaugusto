@@ -8,8 +8,12 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/styles.css" />
-    <script src="./js/shoppingCart.js"></script>
-    <title>[JS] Pre-entrega 2</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./media/img/stone-island_logo.png"
+    />
+    <title>Stone Island › Store</title>
   </head>
   <body>
     <nav class="navbar">
@@ -30,16 +34,14 @@
     </div>
 
     <main class="idx-content">
-      <h3>Para arrancar el prompt haz click en el siguiente botón</h3>
-      <button id="example-btn" onclick="shoppingCart()">SHOPPING CART</button>
+      <div class="available-products"></div>
     </main>
 
-    <!-- global footer imp -->
     <footer class="g-footer">
       <p class="follow-us">FOLLOW US ON</p>
       <ul class="favicons">
         <li>
-          <a href="https://github.com/sotojeriaaugusto" target="_blank">
+          <a href="https://instagram.com/stoneisland" target="_blank">
             <span class="fa-stack fa-2x">
               <i
                 class="fas fa-circle fa-stack-2x"
@@ -75,6 +77,11 @@
           </a>
         </li>
       </ul>
+      <p class="copyright">
+        Copyright © 2000-2024
+        <a href="https://www.stoneisland.com">Stone Island</a> S.p.A. - All
+        rights reserved <br />This is an unofficial site
+      </p>
       <p class="footer-end">
         Made with <i class="fa-solid fa-heart"></i> by
         <strong
@@ -84,5 +91,6 @@
         >
       </p>
     </footer>
+    <script src="./js/shoppingCart.js"></script>
   </body>
 </html>

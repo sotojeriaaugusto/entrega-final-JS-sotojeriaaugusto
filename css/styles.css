@@ -366,14 +366,16 @@ input::-webkit-inner-spin-button {
 
 .notification {
   background-color: #21252b !important;
-  font-family: monospace;
+  font-family: monospace important!;
 }
 
 .swal2-title {
-  color: #fff;
+  color: #fff !important;
+  font-family: monospace;
 }
 .swal2-content {
-  color: #fff;
+  color: #fff !important;
+  font-family: monospace;
 }
 
 .swal2-styled.swal2-confirm {

@@ -10,6 +10,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  font-family: monospace;
 }
 
 /* nav start */
@@ -235,19 +236,30 @@ button {
 /* products */
 .available-products {
   display: grid;
-  gap: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 100px;
+  margin: 30px 100px;
   padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .available-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .available-products {
+    grid-template-columns: 1fr;
+    margin: 30px 20px;
+  }
 }
 
 .product-card {
   border: 1px solid #4a586d71;
-  padding: 10px;
-  max-width: 1200px;
+  padding: 35px;
+  max-width: 1800px;
   text-align: center;
   border-radius: 8px;
   background-color: #21252b81;
@@ -255,18 +267,23 @@ button {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.5s ease;
+}
 
-  &:hover {
-    transform: translate(0, -2.2%);
-  }
+.product-card:hover {
+  transform: translate(0, -2.2%);
+}
+
+.product-img-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
 }
 
 .product-img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
-  background-color: #1b283927;
+  height: 250px;
+  object-fit: contain;
 }
 
 .product-info {
@@ -292,6 +309,18 @@ button {
   font-family: monospace;
 }
 
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.quantity-controls button,
+.quantity-controls .quantity-input {
+  margin: 0 5px;
+}
+
 .add-to-cart-btn {
   font-family: monospace;
   background-image: linear-gradient(to right, #1a1d23, #191b1f);
@@ -301,12 +330,9 @@ button {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  margin-top: 4px;
+  margin-top: 20px;
+  margin-bottom: 10px !important;
   border-radius: 4px;
-}
-
-button {
-  margin-bottom: 8px;
 }
 
 .add-to-cart-btn:disabled {

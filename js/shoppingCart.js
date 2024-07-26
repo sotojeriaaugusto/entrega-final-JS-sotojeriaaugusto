@@ -57,7 +57,9 @@ productList.forEach((product) => {
   productCard.classList.add("product-card");
 
   productCard.innerHTML = `
-    <img src="${product.image}" alt="${product.name}" class="product-img">
+    <div class="product-img-wrapper">
+      <img src="${product.image}" alt="${product.name}" class="product-img">
+    </div>
     <div class="product-info">
       <h3>${product.name}</h3>
       <p>$${product.price}</p>
